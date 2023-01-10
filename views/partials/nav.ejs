@@ -3,9 +3,9 @@
   <nav>
     <!--! font awesome icon -->
     <a id="icon" href="/flights">
+      <!--TODO Change this icon  -->
       <i class="fas fa-film fa-2x"></i>
     </a>
-    <!--! Add a class to the 'add movie' so we can highlight what section we are in  -->
     <a 
       href="/flights/new" 
       <%- title === 'Add Flight' ? 'class="active"' : '' %>
@@ -13,7 +13,7 @@
       ADD FLIGHT
     </a>
     <a 
-      href="/movies" 
+      href="/flights" 
       <%- title === 'All Flights' ? 'class="active"' : '' %>
     >
       All FLIGHTS
