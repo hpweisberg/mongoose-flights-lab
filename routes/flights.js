@@ -6,6 +6,21 @@ const router = Router()
 // GET /flights/new
 router.get('/new', flightsCtrl.new)
 
+// GET /flights/allFlights
+router.get('/', flightsCtrl.index)
+
+// GET /flights/:id
+router.get('/:id', flightsCtrl.show)
+
+// GET /flight/:id/edit
+router.get('/:id/edit', flightsCtrl.edit)
+
+// POST /flights
+router.post('/', flightsCtrl.create)
+
+
+
+
 export {
   router
 }
