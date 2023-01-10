@@ -70,6 +70,16 @@ function updateFlight(req, res){
   })
 }
 
+function deleteFlight(req, res){
+  Flight.findByIdAndDelete(req.params.id)
+  .then(flight => {
+    res.redirect('/flights')
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/')
+  })
+}
 
 export {
   newFlight as new,
@@ -78,4 +88,5 @@ export {
   show,
   edit,
   updateFlight as update,
+  deleteFlight as delete
 }
