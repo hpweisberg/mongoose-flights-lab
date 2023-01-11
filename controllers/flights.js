@@ -50,11 +50,12 @@ function show(req, res){
 }
 
 function edit(req, res){
-  const newFlight = new Flight()
-  const dt = newFlight.departs
-  const departsDate = dt.toISOString().slice(0, 16)
+  // const newFlight = new Flight()
+  // const dt = newFlight.departs
+  // const departsDate = dt.toISOString().slice(0, 16)
   Flight.findById(req.params.id)
   .then(flight => {
+    const departsDate = flight.departs.toISOString().slice(0, 16)
     res.render('flights/edit', {
       title: 'Edit Flight',
       flight,
@@ -66,6 +67,8 @@ function edit(req, res){
     res.redirect('/')
   })
 }
+
+//2023-07-10T17:00
 
 function updateFlight(req, res){
   for (let key in req.body){
