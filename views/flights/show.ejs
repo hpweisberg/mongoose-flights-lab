@@ -17,6 +17,39 @@
     <div>Departs: </div>
     <div><%= new Date(flight.departs).toLocaleDateString() + " -- "  + new Date(flight.departs).toLocaleTimeString([], {timeStyle: 'short'})%></div>
   </section>
-</main>
+  <br>
+  <br>
+  <h2>Puchase Tickets:</h2>
+  <form id="purchaseTicket" action="/flights/<%= flight.id %>/tickets" method="POST">
+    <label for="seat-input">Seat:</label>
+    <input name="seat" required pattern="[A-F][1-9]\d?" id="seat-input">
+    <label for="price-input">Price:</label>
+    <input name="price" id="price-input">
+
+    <button type="submit">Purchase Ticket</button>
+  </form>
+    <% if (flight.tickets.length) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>Purchased Date</th>
+            <th>Seat</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% flight.tickets.forEach(ticket => { %>
+            <tr>
+              <td><%= ticket.createdAt.toLocaleDateString() %></td>
+              <td><%= ticket.seat %></td>
+              <td><%= ticket.price %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+        <% } else { %>
+          <h3>No Tickets Purchased</h3>
+        <% } %>
+  </main>
   
 <%- include('../partials/footer') %>

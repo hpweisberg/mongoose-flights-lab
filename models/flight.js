@@ -2,7 +2,18 @@ import mongoose from "mongoose";
 
 const Schema = mongoose.Schema
 
-
+const ticketSchema = new Schema({
+  seat: {
+    type: String,
+    match: /[A-F][1-9]\d?/
+  },
+  price: {
+    type: Number,
+    min: 0,
+  }
+}, {
+  timestamps: true
+})
 
 const flightSchema = new Schema({
   airline: {
@@ -27,13 +38,15 @@ const flightSchema = new Schema({
       date.setFullYear(oneYearLater)
       return date
     }
-  }
+  },
+  tickets: [ticketSchema]
 }, {
   timestamps: true
 })
 
 const Flight = mongoose.model('Flight', flightSchema)
+// const Ticket = mongoose.model('Flight', ticketSchema)
 
 export {
-  Flight
+  Flight,
 }
