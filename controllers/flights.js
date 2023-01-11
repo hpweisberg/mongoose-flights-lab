@@ -1,8 +1,12 @@
 import { Flight } from "../models/flight.js"
 
 function newFlight(req, res){
+  const newFlight = new Flight()
+  const dt = newFlight.departs
+  const departsDate = dt.toISOString().slice(0, 16)
   res.render('flights/new', {
     title: 'Add Flight',
+    dateOfFlight: departsDate
   })
 }
 
@@ -46,11 +50,15 @@ function show(req, res){
 }
 
 function edit(req, res){
+  const newFlight = new Flight()
+  const dt = newFlight.departs
+  const departsDate = dt.toISOString().slice(0, 16)
   Flight.findById(req.params.id)
   .then(flight => {
     res.render('flights/edit', {
       title: 'Edit Flight',
-      flight
+      flight,
+      dateOfFlight: departsDate
     })
   })
   .catch(error => {
@@ -60,6 +68,9 @@ function edit(req, res){
 }
 
 function updateFlight(req, res){
+  for (let key in req.body){
+    if (req.body[key] === '') delete req.body[key]
+  }
   Flight.findByIdAndUpdate(req.params.id, req.body, {new:true})
   .then(flight => {
     res.redirect(`/flights/${flight._id}`)
