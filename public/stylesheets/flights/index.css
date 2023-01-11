@@ -1,3 +1,48 @@
 .fightHasTakenOff {
   color: red;
 }
+
+/* main {
+  display: flex;
+  flex-direction: row;
+} */
+
+h1 {
+  display: flex;
+  justify-content: center;
+  color: var(--text);
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: var(--background);
+  border-radius: 10px;
+  box-shadow: 0 0 15px 6px rgba(0, 0, 0, .20);
+  padding: 1em;
+  margin-top: 3em;
+  max-width: 40em;
+}
+
+td {
+  padding: 4px;
+}
+
+td:last-of-type {
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: var(--nav);
+  color: var(--accent);
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, .06);
+  border-radius: 50px;
+}
+
+.delete {
+  background-color: var(--text);
+  color: var(--nav);
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, .06);
+  border-radius: 50px;
+}

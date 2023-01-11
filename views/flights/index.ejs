@@ -6,6 +6,7 @@
 
 
 <main>
+<section class="main-container">
   <h1>Flight List</h1>
   <table class="sortable">
     <thead>
@@ -30,7 +31,7 @@
           <td>
             <form action="/flights/<%= flight._id %>?_method=DELETE" method="POST"
               >
-              <button>X</button>
+              <button class="delete">X</button>
             </form>
           </td>
         </tr>
@@ -38,6 +39,7 @@
 
     </tbody>
   </table>
+</section>
 </main>
 
 <%- include('../partials/footer') %>

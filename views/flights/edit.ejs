@@ -3,34 +3,37 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1><%= title %></h1>
-  <form id="new-form" action="/flights/<%= flight._id %>?_method=PUT" method="POST">
-    <label for="airline-input">Airline:</label>
-    <select  name="airline" id="airline-input">
-      <!--! select the correctr option when editing -->
-      <option value="" disabled selected hidden><%= flight.airline %></option>
-      <option value="American">American</option>
-      <option value="JetBlue">JetBlue</option>
-      <option value="United">United</option>
-      <option value="Southwest">Southwest</option>
-    </select>
-    <label for="airport-input">Airport:</label>
-    <select name="airport" id="airport-input">
-      <option value="" disabled selected hidden><%= flight.airport %></option>
-      <option value="AUS">AUS</option>
-      <option value="DEN">DEN</option>
-      <option value="DFW">DFW</option>
-      <option value="JFK">JFK</option>
-      <option value="LAX">LAX</option>
-      <option value="SAN">SAN</option>
-    </select>
-    <label for="flight-Number-input">Flight Number:</label>
-    <input name="flightNo"  value="<%= flight.flightNo %>" id="flight-Number-input">
-    <label for="departs-input">Departs: <%= new Date(flight.departs).toLocaleDateString() + " -- "  + new Date(flight.departs).toLocaleTimeString([], {timeStyle: 'short'})%> </label>
-    <input type="datetime-local" value="<%= dateOfFlight %> " name="departs" id="departs-input">
-    <button type="submit">Update Flight</button>
-  </form>
-</main>
+  <section class="main-container">
 
-
+    <h1><%= title %></h1>
+    <form id="new-form" action="/flights/<%= flight._id %>?_method=PUT" method="POST">
+      <label for="airline-input">Airline:</label>
+      <select  name="airline" id="airline-input">
+        <!--! select the correctr option when editing -->
+        <option value="" disabled selected hidden><%= flight.airline %></option>
+        <option value="American">American</option>
+        <option value="JetBlue">JetBlue</option>
+        <option value="United">United</option>
+        <option value="Southwest">Southwest</option>
+      </select>
+      <label for="airport-input">Airport:</label>
+      <select name="airport" id="airport-input">
+        <option value="" disabled selected hidden><%= flight.airport %></option>
+        <option value="AUS">AUS</option>
+        <option value="DEN">DEN</option>
+        <option value="DFW">DFW</option>
+        <option value="JFK">JFK</option>
+        <option value="LAX">LAX</option>
+        <option value="SAN">SAN</option>
+      </select>
+      <label for="flight-Number-input">Flight Number:</label>
+      <input name="flightNo"  value="<%= flight.flightNo %>" id="flight-Number-input">
+      <label for="departs-input">Departs: <%= new Date(flight.departs).toLocaleDateString() + " -- "  + new Date(flight.departs).toLocaleTimeString([], {timeStyle: 'short'})%> </label>
+      <input type="datetime-local" value="<%= dateOfFlight %> " name="departs" id="departs-input">
+      <button type="submit">Update Flight</button>
+    </form>
+  </section>
+  </main>
+  
+  
 <%- include("../partials/footer") %>

@@ -17,3 +17,32 @@ form > button {
   margin-left: auto;
   font-size: 22px;
 }
+
+h1 {
+  display: flex;
+  justify-content: center;
+  color: var(--text);
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: var(--background);
+  border-radius: 10px;
+  box-shadow: 0 0 15px 6px rgba(0, 0, 0, .20);
+  padding: 1em;
+  margin-top: 3em;
+  max-width: 40em;
+}
+
+td {
+  padding: 4px;
+}
+
+button {
+  background-color: var(--nav);
+  color: var(--accent);
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, .06);
+  border-radius: 25px;
+}
