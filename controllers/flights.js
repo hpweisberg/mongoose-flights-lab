@@ -95,6 +95,25 @@ function deleteFlight(req, res){
   })
 }
 
+function deleteTicket(req, res){
+  Flight.findById(req.params.id)
+  .then(ticket => {
+    Flight.tickets.pop(req.body)
+    Flight.save()
+    .then(() => {
+      res.redirect(`/flights/${flight._id}`)
+    })
+    .catch(error => {
+      console.log(error)
+      res.redirect('/')
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/')
+  })
+}
+
 function createTicket(req, res){
   console.log(req.body)
   Flight.findById(req.params.id)
@@ -123,5 +142,6 @@ export {
   edit,
   updateFlight as update,
   deleteFlight as delete,
-  createTicket
+  createTicket,
+  deleteTicket
 }
