@@ -4,7 +4,17 @@
 
 <main>
   <section class="main-container">
-    
+    <p>Please ensure the Meal has not already been selected</p>
+    <select>
+      <% meals.forEach(function(meal) { %>
+        <option><%= meal.name %></option>
+      <% }) %>
+    </select>
+    <form id="add-meal-form" action="/meals" method="POST">
+      <label for="name-input">Name:</label>
+      <input type="text" name="name" id="name-input">
+      <button type="submit">Add Meal</button>
+    </form>
   </section>
 </main>
 
