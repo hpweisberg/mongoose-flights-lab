@@ -95,3 +95,17 @@ select, input {
   box-shadow: 0 0 15px 4px rgba(0, 0, 0, .06);
   border-radius: 25px;
 }
+
+.edit-btn {
+  display: flex;
+  position: relative;
+  /* left: em */
+}
+
+.purchase-btn {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  margin-top: 20px;
+  left: 13em
+}
