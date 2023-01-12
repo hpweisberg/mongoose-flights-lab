@@ -109,3 +109,33 @@ select, input {
   margin-top: 20px;
   left: 13em
 }
+
+.meal-options-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.meal-options-details > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.meal-options-details > div:first-of-type {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 0px;
+}
+
+.meals-on-flight > div > h4 {
+  margin: 10px;
+}
+
+#add-meal-to-flight > select {
+  width: 180px;
+}
