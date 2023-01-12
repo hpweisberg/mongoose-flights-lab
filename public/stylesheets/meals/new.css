@@ -30,7 +30,7 @@ form * {
   font-size: 20px;
 }
 
-form > button {
+form > div > button {
   grid-column: span 2;
   width: 160px;
   margin-left: auto;
@@ -44,4 +44,18 @@ form > button {
 select, input {
   box-shadow: 0 0 15px 4px rgba(0, 0, 0, .06);
   border-radius: 25px;
+}
+
+#add-meal-div {
+  width: 100%;
+}
+
+#add-meal-form, table {
+  display: flex;
+  flex-direction: column;
+}
+
+table {
+  display: flex;
+  align-items: center;
 }
